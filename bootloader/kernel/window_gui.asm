@@ -254,7 +254,7 @@ window_find_new_active:
     push bx
     push di
     
-    mov [active_window], -1
+    mov word [active_window], -1
     mov bx, WINDOW_MAX
     mov di, windows
     
@@ -450,7 +450,7 @@ window_check_drag:
     push bp
     
     ; Check if already dragging
-    cmp [drag_window], -1
+    cmp word [drag_window], -1
     jne .continue_drag
     
     ; Start new drag
@@ -543,7 +543,7 @@ window_check_drag:
 ; window_stop_drag: Stop dragging windows
 ; ============================================================
 window_stop_drag:
-    mov [drag_window], -1
+    mov word [drag_window], -1
     ret
 
 ; ============================================================

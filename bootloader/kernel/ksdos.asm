@@ -154,22 +154,19 @@ system_load_complete:
     
     ; Initialize FAT filesystem (20%)
     mov al, 1
-    call splash_update
+    call gui_update_progress
     
     ; Load critical system data (40%)
     mov al, 2
-    call splash_update
+    call gui_update_progress
     
     ; Initialize disk system (60%)
     mov al, 3
-    call splash_update
+    call gui_update_progress
     
     ; Load driver systems (80%)
     mov al, 4
-    call splash_update
-    
-    ; Complete loading
-    call splash_complete
+    call gui_update_progress
     
     pop dx
     pop si
