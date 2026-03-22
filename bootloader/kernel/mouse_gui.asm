@@ -22,6 +22,9 @@ mouse_last_buttons db 0          ; Last button state
 mouse_enabled     db 0          ; Mouse enabled flag
 mouse_sensitivity  db 3          ; Mouse sensitivity
 
+global mouse_x
+global mouse_y
+
 ; ---- Mouse packet structure ----
 mouse_packet       db 3 dup(0)   ; 3-byte PS/2 packet
 mouse_packet_index db 0          ; Current packet byte index

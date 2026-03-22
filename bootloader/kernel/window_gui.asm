@@ -30,11 +30,15 @@ WINDOW_CLOSEABLE equ 0x10
 windows:
     times WINDOW_MAX * WINDOW_SIZE db 0
 
+; Global variables
 active_window    dw -1
 window_count     db 0
 drag_window      dw -1
 drag_offset_x    dw 0
 drag_offset_y    dw 0
+
+global active_window
+global window_count
 
 ; ============================================================
 ; window_create: Create a new window

@@ -48,11 +48,13 @@ colors:
 
 ; ---- GUI state ----
 current_color    db 1        ; Default white
-mouse_x         dw 160
-mouse_y         dw 100
 mouse_visible    db 1
-window_count    db 0
-active_window   dw 0
+
+; External variables (defined in mouse_gui.asm and window_gui.asm)
+extern mouse_x
+extern mouse_y
+extern active_window
+extern window_count
 
 ; ============================================================
 ; video_gui_init: Initialize GUI video mode
